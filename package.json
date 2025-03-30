@@ -1,0 +1,22 @@
+{
+  "name": "aboutmesite",
+  "version": "1.0.0",
+  "description": "Wander.Dev about me site",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shane B.",
+  "license": "ISC",
+  "dependencies": {
+    "@datastructures-js/queue": "^4.2.3",
+    "datastructures-js": "^13.0.0",
+    "gsap": "^3.12.7",
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.175.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.3"
+  }
+}

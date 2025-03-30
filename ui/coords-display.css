@@ -1,0 +1,8 @@
+.coords {
+    position: fixed;
+    z-index: 100;
+    color: white;
+    right: 0;
+    top: 0;
+    font-family: monospace;
+}

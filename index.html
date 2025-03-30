@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>wander.dev</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wander.dev/assets/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://wander.dev/assets/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://wander.dev/assets/icon/favicon-16x16.png">
+    <link rel="manifest" href="https://wander.dev/assets/icon/site.webmanifest">
+    <link rel="mask-icon" href="https://wander.dev/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://wander.dev/assets/icon/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Wander Dev">
+    <meta name="application-name" content="Wander Dev">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/icon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="public/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+  </head>
+  <body id="primaryContainer" class="container">
+    <div class="window-outline hideable-ui">
+        <svg width="100vw" height="100vh" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 100">
+            <defs>
+                <g id="gg">
+                    <rect id="rect" x="0" y="2" width="100%" height="96%"></rect>
+                </g>
+            </defs>
+            <g class="anim" fill="none" stroke="#FFFFFF" stroke-width="0.1" stroke-linecap="round" stroke-linejoin="round">
+                <use xlink:href="#rect" class="rect" />
+            </g>
+        </svg>
+    </div>
+    <div id="logo" class="logo-container hideable-ui">
+        <div>
+            <img id="logo-img" class="logo-primary animate-appear glitch-target" src="wanderdev2_white.svg" alt="Wander.Dev Logo"/>
+        </div>
+        <div class="name-title animate-appear">
+            Shane B. <span class="text-sep"></span> Software Engineer
+        </div>
+        <div class="animated-line">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 1">
+                <defs>
+                  <g id="gg">
+                    <line id="line" x1="10" y1="0" x2="110" y2="0"></line>
+                  </g>
+                </defs>
+                <g class="anim" fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
+                  <use xlink:href="#line" class="line" />
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="overlay-wrapper hideable-ui">
+        <div id="hiddenPanel" class="flip-panel hidden-panel">
+            <div class="flip-panel-inner">
+                <div class="flip-panel-front text-panel about-me-panel">
+                    <div class="profile-pic">
+                        <img src="https://avatars.githubusercontent.com/u/37834723" alt="Shane B.'s Github Profile Picture">
+                    </div>
+                    <div class="text-panel-content">
+                        <h1 class="about-me-title">Hello there 👋</h1>
+                        <span class="line"></span>
+                        <p>
+                            I'm Shane. Software engineer with currently around 6.5 years of experience.
+                            <br><br>
+
+                            I'm a technology- and language-angostic generalist who is passionate about a variety of subfields of computer science, with a particular interest in solving <span class="emphasis">interesting</span> problems.
+                            <br><br>
+                            I'm proficient in quite a few c-derived languages but am always open to discovering more interesting technologies!
+                            <br><br>
+                            I hope to be able to work on many <span class="emphasis">challenging projects</span>, solve many <span class="emphasis">high-impact problems</span>, and learn many new things moving forward. ✨
+                        </p>
+                    </div>
+                </div>
+                <div class="flip-panel-back text-panel contact-panel">
+                    <div class="text-panel-content">
+                        <h1>Contact Me ✉️</h1>
+                        <span class="line"></span>
+                        <p>
+                            I'm not particularly active on social media these days, however here are some places you might be able to reach me sometimes:
+                        </p>
+                        <div class="contact-items">
+                            <a href="mailto:shane@wander.dev" class="contact-item" target="_blank">
+                                <img src="/mail_materialicons3_google.svg" alt="Email Icon">
+                                <span class="contact-text">shane@wander.dev</span>
+                            </a>
+                            <a href="https://github.com/parawanderer" class="contact-item" target="_blank">
+                                <img src="/github-mark-white.svg" alt="Github Logo">
+                                <span class="contact-text">parawanderer</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/shane-sb/" class="contact-item" target="_blank">
+                                <img src="/linkedin.svg" alt="Linkedin Logo">
+                                <span class="contact-text">Shane B.</span>
+                            </a>
+                        </div>
+                        <p>
+                            © Shane B. 2025
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="buttonSet" class="button-set">
+            <div class="left-set">
+                <div class="button-container">
+                    <button id="freeFlightButton" class="side-button animate-appear glitch-target">
+                        <img src="/lock_open_right_materialicons3_google.svg" alt="Unlock Icon">
+                        Fly Free!
+                    </button>
+                </div>
+            </div>
+
+            <div class="middle-set">
+                <div class="button-container">
+                    <button class="button glitch-target animate-appear" id="homeButton">
+                        <span>Home</span>
+                    </button>
+                </div>
+
+                <div class="button-container">
+                    <button class="button glitch-target animate-appear" id="aboutMeButton">
+                        <span>About Me</span>
+                    </button>
+                </div>
+
+                <div class="button-container">
+                    <button class="button glitch-target animate-appear" id="contactButton">
+                        <span>Contact</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="right-set">
+                <div class="button-container">
+                    <a class="side-button animate-appear glitch-target" href="https://github.com/parawanderer/personalsite2025">
+                        <img src="/github-mark-white.svg" alt="Github Logo">
+                        View Source Code on Github
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-container-lb no-display" id="freeFlightUi">
+        <div class="icon-button-container glitch">
+            <button id="returnFromFreeFlight" class="icon-button glitch-target">
+                <img src="/arrow_back_materialicons3_google.svg"/>
+            </button>
+        </div>
+    </div>
+    <div class="overlay-container-rb no-display" id="controlsHintsUi">
+        <div class="controls-explain">
+            <div class="col align-img-right">
+                <img src="/mouse_materialicons3_google.svg" alt="Mouse Icon">
+            </div>
+            <div class="control-explanation col">
+                to rotate
+            </div>
+            <div class="col">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td><span class="key-display">W</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="key-display">A</span></td>
+                            <td><span class="key-display">S</span></td>
+                            <td><span class="key-display">D</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="control-explanation col">
+                to move
+            </div>
+            <div class="col">
+                <span class="key-display wide">⎵</span>
+            </div>
+            <div class="control-explanation col">
+                to pause movement
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

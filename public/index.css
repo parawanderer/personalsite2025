@@ -1,0 +1,1293 @@
+@charset "UTF-8";
+
+/**
+
+
+                                                ..',;:cccllllllccc:;,'..
+                                         .';coxOKXNWMMMMMMMMMMMMMMMMWNX0Oxoc;'.
+                                    .,cdOKNMMWNKOkdolc::;;;;;;;;::clodkOKNWMMNKkdc,.
+                                .,lxKWMWX0xoc,..                        ..,cox0XWMWKxl,.
+                             .:dKWMWKkl;.                                      .;lkKWMN0d;.
+                          .;xKWMXOo,.                                              .;oONMWKd;.
+                        'o0WMNkc'                                                      'ckNMW0o'
+                      ;xNMW0l'                                                            'o0WMXx,
+                    ;kNMNk;.                                                                .:kNMNk;
+                  ,kNMNx,                                                                      ,kNMNk,
+                .dNMNk,                                                                          ,kNMNd.
+               :KWW0:                                                                              :0WW0;
+             .dNMNd.       .......                                     ..',;:;,'.                   .dNMNd.
+            'OWMK:    .;lxO0KXXXK0Odl;.                            .;ok0XXXXXXXXKOdc'                 :KMWk'
+           ;0MWO'  .:xXN0xoc;;;;:cokKNKd;.                       ,dKNKxl;'.....,:okXNOl.               'OWM0,
+          ;KMWx. .c0N0o,.           .;dKNO:                    'xNNx;.             .cONKl.              .xWMK;
+         ;KMWx. 'kWKc.                 .oXNx.                 cXWk,.                 .cKWk'              .xWMK,
+        '0MWk. ,0MWOooooooooooooooooooood0MWk.              .cNMN0OOOOOOOOOOOOOOOOOOOOOXMM0'              .kWMO.
+       .xWM0' .kWXOkOkkkOXMMMMMMXOkOkkkkOkONWd.            ,xKWOoooooooxXMMMMMXxoooooooodKWd.              '0MWx.
+       lNMX:  cNX:     .cXMMMMMMK:.        lWX;            oWWK,      'OWMMMMMWO'        lWK,               :XMNc
+      '0MWd.  dMO'     ;XMMMMMMMMK,        ;XWc           .xMMk.     .dMMMMMMMMMd        :NN:               .dWM0'
+      oWMK,   dM0'     ;XMMMMMMMMK,        ;XWc           .xMMO.      oWMMMMMMMWo        :NN:                ,KMWl
+     '0MWd    cNNc     .lXMMMMMMKc.        oWX;            cXNXl......,kWMMMMMWk,.......'kMO'                 dWMO.
+     :NMX;    .kMXOOOOOOOXMMMMMMXOOOOOOOOOONWd.            .:kWNKKXXXXXXWMMMMMWXKXXXXXXKXWNc                  :XMN:
+     dMMO.     ,0MWOolllllllllllllllllllo0WWk.               .OWWkc:::::::::::::::::::lKMNo.                  .OMWo
+    .kMMx.      'kWKl.                 .oXNd.                 .dNXd'                .;OWK:                    .xMMx.
+    .OMMo        .c0NKo,.           .;dXNO;                     ;kNNkc'.         .;o0NKo.                      oMMk.
+    '0MWl          .:xXNKxoc:;,;:cokXNKd;                         'lOXN0kdollloxOXNKx:.                        lWM0'
+    '0MWo             .;ldO0KKKKK0kdc,.                              .;coxkkOkkdo:,.                           oMMO.
+    .kMMd                  ......                                                                              dMMk.
+    .xMMk.                          ........................................................                  .kMMd
+     lWMK,      cOOOOOOOOOOOOOOOOOO000000000000000000000KKXKKKKKKKKKKKKKKKKKKKXXXXXXXXXXKKXd.                 ,KMWc
+     ,KMWl      ,lllllcccccccccccccccccccccc::::::::::::::::::::;;;;;;,,;;;;;,;;,;;,;;;,'''.                  lWMK,
+     .xMMk.                                                                                                  .kMMx.
+      :NMNc                                                                                                  cNMX:
+      .xWMO'                                                                                                '0MWx.
+       ,KMWd.                                                                                              .dWM0'
+        cNMNl                                                                                              lNMX:
+        .oNMX:                                                                                            :XMNo
+         .dWMX:                                                                                          :XMWd.
+          .dNMXc                                                                                        cXMNd.
+           .oNMNo.                                                                                    .oNMXl.
+             :KMWk'                                                                                  'kWMK:
+              'kWMXl.                                                                              .lXMWk'
+               .lXMWO;                                                                            ;OWMKc.
+                 'xNMNk,                                                                        ,kNMNx'
+                   ,kNMNk;.                                                                  .;kNMNx,
+                     ;kNMNOc.                                                              .cONMNx,
+                       ,dXWWXx;.                                                        .;xXWWKd,
+                         .ckNMWKd:.                                                  .:dKWMNkc.
+                            'lONMWXkl;.                                          .;lkXWMXkl'
+                               'cxKWMWXOdc,..                              ..,cdOXWMWKxc.
+                                  .,cx0XWMWX0kdl:;'....          ....';:ldk0XWMWX0xc,.
+                                       .;ldk0XWMMMWNXK0OOOkkkkOOO0KXNWMMMWX0kdc;.
+                                            ..,;cldxkOO00KKXXK000OOkxdlc:,..
+                                                       ..........
+*/
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.emphasis {
+    font-weight: 600;
+}
+
+.window-outline {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 60%;
+    width: auto;
+    margin-top: 40vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    transition:
+        min-width 2s ease-in-out,
+        margin-top 2s ease-in-out,
+        margin-left 2s ease-in-out,
+        margin-right 2s ease-in-out;
+}
+
+.logo-primary {
+    cursor: pointer;
+    width: 100%;
+    transition:
+        width 2s ease-in-out;
+}
+
+.logo-primary.animate-appear {
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation: generic-appear 1s ease-in-out;
+    -webkit-animation: generic-appear 1s ease-in-out;
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: 0pt;
+    border-top: 1.5pt solid #ffffff33;
+    background: #ffffff33;
+    border-radius: 4pt;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.name-title.animate-appear {
+    animation-iteration-count: 1;
+    animation-delay: 1.5s;
+    animation: generic-appear 1s ease-in-out;
+    -webkit-animation: generic-appear 1s ease-in-out;
+}
+
+.text-sep {
+    width: 3pt;
+    height: 3pt;
+    display: inline-block;
+    background: white;
+    margin: 0 25pt;
+    border-radius: 10pt;
+    transition:
+        margin 2s ease-in-out;
+}
+
+.name-title {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 200;
+    font-size: 27pt;
+    margin-left: 10pt;
+    margin-right: 10pt;
+    text-align: center;
+    min-width: 100%;
+    width: auto;
+    margin-top: 1em;
+    transition:
+        font-size 2s ease-in-out,
+        font-weight 2s ease-in-out,
+        min-width 2s ease-in-out,
+        margin-top 2s ease-in-out;
+}
+
+.animated-line {
+    opacity: 1;
+    margin-top: 3em;
+    width: 100%;
+    transition:
+        margin-top 2s ease-in-out,
+        opacity 1s ease-in-out,
+        width 1s ease-in-out;
+}
+
+/* reference for this: https://letswp.justifiedgrid.com/animate-svg-lines-closed-paths-dash-attributes/ */
+
+@keyframes inside-out {
+    from {
+        stroke-dasharray: 0 100;
+        stroke-dashoffset: 50;
+    }
+
+    to {
+        stroke-dasharray: 100 0;
+        stroke-dashoffset: 100;
+    }
+}
+
+svg .anim * {
+    animation: inside-out 5s ease-in-out;
+}
+
+.overlay-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+}
+
+.button-set {
+    flex: 1;
+    padding: 0 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    margin-top: 1em;
+}
+
+.middle-set {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-set {
+    flex: 1;
+}
+
+.right-set {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.button {
+    background-color: white;
+    color: black;
+    mix-blend-mode: screen;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    border: 0;
+    margin: 1em;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 2.2em;
+    width: 10em;
+
+}
+
+.button.animate-appear {
+    animation-iteration-count: 1;
+    animation-delay: 2.5s;
+    animation: generic-appear 1s ease-in-out;
+    -webkit-animation: generic-appear 1s ease-in-out;
+}
+
+.side-button {
+    outline: 0;
+    border: 1pt solid white;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: white;
+    border-radius: 40pt;
+    font-size: 7pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    width: 82pt;
+    text-decoration: none;
+    text-align: center;
+}
+
+.side-button.animate-appear {
+    animation-iteration-count: 1;
+    animation-delay: 2.75s;
+    animation: generic-appear 1s ease-in-out;
+    -webkit-animation: generic-appear 1s ease-in-out;
+}
+
+.side-button img {
+    width: 2em;
+    margin-right: 1em;
+}
+
+.button-container {
+    position: relative;
+    cursor: pointer;
+    width: min-content;
+}
+
+
+@keyframes generic-appear {
+    0% {
+        transform: translateY(10pt);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0pt);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes generic-appear {
+    0% {
+        transform: translateY(10pt);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0pt);
+        opacity: 1;
+    }
+}
+
+.hideable-ui {
+    opacity: 1;
+    transition: all 2s ease-in-out;
+}
+
+.hideable-ui.hidden {
+    opacity: 0;
+}
+
+.hideable-ui.no-display {
+    display: none;
+}
+
+.overlay-container-lb {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    margin-left: 3vw;
+    margin-bottom: 2vh;
+    opacity: 0;
+    transition:
+        opacity 1s ease-in-out;
+}
+
+.overlay-container-rb {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    margin-bottom: 1vh;
+    margin-right: 1vw;
+    opacity: 0;
+    transition:
+        opacity 1s ease-in-out;
+}
+
+
+.overlay-container-lb.no-display, .overlay-container-rb.no-display {
+    display: none;
+}
+
+.overlay-container-lb.show, .overlay-container-rb.show {
+    opacity: 1;
+}
+
+
+.icon-button-container {
+    cursor: pointer;
+}
+
+.icon-button {
+    background-color: transparent;
+    outline: 0;
+    border-radius: 100pt;
+    border: 1pt solid white;
+    cursor: pointer;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.icon-button img {
+    width: 100%;
+    height: 100%;
+}
+
+.controls-explain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    flex: 1;
+}
+
+.control-explanation {
+    color: white;
+    margin-left: 1em;
+}
+
+.key-display {
+    border: 1pt solid white;
+    width: 20pt;
+    height: 20pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 2pt;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.key-display.wide {
+    width: 60pt;
+}
+
+
+/** while looking at the "about me" page */
+
+.logo-container.panel-shown {
+    margin-top: 7vh;
+    margin-left: 31vw;
+    margin-right: auto;
+    min-width: 0%;
+    width: auto;
+}
+
+.logo-container.panel-shown .logo-primary {
+    width: 120%;
+}
+
+.logo-container.panel-shown .name-title {
+    font-size: 16pt;
+    font-weight: 300;
+    min-width: 0%;
+    margin-top: 0.5em;
+}
+
+.logo-container.panel-shown .animated-line {
+    margin-top: 0em;
+    width: 0%;
+    opacity: 0;
+}
+
+.logo-container.panel-shown .text-sep {
+    margin: 0 10pt;
+}
+
+/* Generic text panel */
+
+.text-panel {
+    background: #3434341c;
+    /* box-shadow: 0px 20px 20px #59272742; */
+    line-height: 20pt;
+    margin: auto;
+    backdrop-filter: blur(14px);
+    border-radius: 2pt;
+}
+
+.text-panel-content {
+    padding: 2.5em 5em;
+}
+
+.about-me-title {
+    margin-bottom: 1.5em;
+}
+
+.hidden-panel {
+    /* overflow: hidden; */
+    clip-path: xywh(0 -20% 100% 120%);
+    position: relative;
+    opacity: 1;
+    display: block;
+    height: 0vh;
+    width: 40%;
+    margin: auto;
+    transition:
+        opacity 2s ease-in-out,
+        height 2s ease-in-out;
+}
+
+.hidden-panel.show {
+    display: block;
+    opacity: 1;
+    height: 69vh;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-pic {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 100%;
+    overflow: hidden;
+    transform: translate(-50%, -40%);
+    z-index: 100;
+    width: 10rem;
+    height: 10rem;
+}
+
+h1 {
+    color: white;
+    font-weight: 600;
+}
+
+p, li {
+    color: white;
+    font-size: 13pt;
+    font-weight: 300;
+}
+
+.contact-items {
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-left: 5pt;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 1em;
+    width: fit-content;
+}
+
+.contact-item img {
+    width: 19pt;
+    height: 19pt;
+    margin-right:12pt;
+}
+
+.contact-text {
+    color: white;
+    font-weight: 400;
+    font-size: 14pt;
+    position: relative;
+}
+
+.contact-text:after {
+    content: "";
+    background-color: white;
+    height: 0pt;
+    border-top: 1.5pt solid white;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 4pt;
+    transition:
+        width 0.5s ease-in-out;
+}
+
+a.contact-item:hover .contact-text:after {
+    width: 100%;
+}
+
+.align-img-right {
+    text-align: right;
+}
+
+
+.flip-panel {
+  background-color: transparent;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  transition: all 2s ease-in-out;
+}
+
+.flip-panel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+}
+
+.flip-panel.flipped .flip-panel-inner {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flip-panel-front, .flip-panel-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* .flip-panel-front {
+    background-color: red;
+} */
+
+.flip-panel-back {
+    /* background-color: dodgerblue; */
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+/*
+reference: https://codepen.io/fearOfCode/pen/PoMyKQ
+*/
+
+.glitch .glitch-target {
+    transform: skewX(0deg) scaleY(1);
+    /* -webkit-animation: glitch-target-anim 4s linear infinite;
+    animation: glitch-target-anim 4s linear infinite; */
+}
+
+.glitch:hover .glitch-target {
+    -webkit-animation: glitch-target-anim 4s linear infinite;
+    animation: glitch-target-anim 4s linear infinite;
+}
+
+@-webkit-keyframes glitch-target-anim {
+    0% {
+      transform: translate(5px, 2px);
+    }
+    2% {
+      transform: translate(1px, 5px);
+    }
+    4% {
+      transform: translate(1px, 5px);
+    }
+    6% {
+      transform: translate(3px, 4px);
+    }
+    8% {
+      transform: translate(2px, 1px);
+    }
+    10% {
+      transform: translate(5px, 5px);
+    }
+    12% {
+      transform: translate(5px, 3px);
+    }
+    14.000000000000002% {
+      transform: translate(2px, 4px);
+    }
+    16% {
+      transform: translate(2px, 1px);
+    }
+    18% {
+      transform: translate(4px, 5px);
+    }
+    20% {
+      transform: translate(3px, 1px);
+    }
+    22% {
+      transform: translate(3px, 5px);
+    }
+    24% {
+      transform: translate(4px, 3px);
+    }
+    26% {
+      transform: translate(5px, 3px);
+    }
+    28.000000000000004% {
+      transform: translate(5px, 5px);
+    }
+    30% {
+      transform: translate(2px, 5px);
+    }
+    32% {
+      transform: translate(5px, 4px);
+    }
+    34% {
+      transform: translate(2px, 4px);
+    }
+    36% {
+      transform: translate(1px, 3px);
+    }
+    38% {
+      transform: translate(3px, 5px);
+    }
+    40% {
+      transform: translate(1px, 5px);
+    }
+    42% {
+      transform: translate(4px, 5px);
+    }
+    44% {
+      transform: translate(3px, 1px);
+    }
+    46.00000000000001% {
+      transform: translate(3px, 2px);
+    }
+    48% {
+      transform: translate(4px, 5px);
+    }
+    50% {
+      transform: translate(1px, 1px);
+    }
+    52% {
+      transform: translate(1px, 1px);
+    }
+    54% {
+      transform: translate(4px, 1px);
+    }
+    56.00000000000001% {
+      transform: translate(1px, 1px);
+    }
+    58% {
+      transform: translate(2px, 2px);
+    }
+    60% {
+      transform: translate(5px, 5px);
+    }
+    62% {
+      transform: translate(4px, 1px);
+    }
+    64% {
+      transform: translate(2px, 3px);
+    }
+    66% {
+      transform: translate(3px, 4px);
+    }
+    68% {
+      transform: translate(4px, 2px);
+    }
+    70.00000000000001% {
+      transform: translate(3px, 2px);
+    }
+    72% {
+      transform: translate(3px, 3px);
+    }
+    74% {
+      transform: translate(2px, 4px);
+    }
+    76% {
+      transform: translate(4px, 2px);
+    }
+    78% {
+      transform: translate(1px, 5px);
+    }
+    80% {
+      transform: translate(2px, 1px);
+    }
+    82.00000000000001% {
+      transform: translate(5px, 5px);
+    }
+    84% {
+      transform: translate(2px, 1px);
+    }
+    86% {
+      transform: translate(2px, 2px);
+    }
+    88% {
+      transform: translate(4px, 4px);
+    }
+    90% {
+      transform: translate(4px, 1px);
+    }
+    92.00000000000001% {
+      transform: translate(4px, 2px);
+    }
+    94% {
+      transform: translate(3px, 1px);
+    }
+    96% {
+      transform: translate(1px, 3px);
+    }
+    98% {
+      transform: translate(2px, 4px);
+    }
+    100% {
+      transform: translate(4px, 2px);
+    }
+    1% {
+      transform: scaleY(1) skewX(0deg);
+    }
+    1.5% {
+      transform: scaleY(3) skewX(-60deg);
+    }
+    2% {
+      transform: scaleY(1) skewX(0deg);
+    }
+    51% {
+      transform: scaleX(1) scaleY(1) skewX(0deg);
+    }
+    52% {
+      transform: scaleX(1.5) scaleY(0.2) skewX(80deg);
+    }
+    53% {
+      transform: scaleX(1) scaleY(1) skewX(0deg);
+    }
+  }
+@keyframes glitch-target-anim {
+    0% {
+      transform: translate(5px, 2px);
+    }
+    2% {
+      transform: translate(1px, 5px);
+    }
+    4% {
+      transform: translate(1px, 5px);
+    }
+    6% {
+      transform: translate(3px, 4px);
+    }
+    8% {
+      transform: translate(2px, 1px);
+    }
+    10% {
+      transform: translate(5px, 5px);
+    }
+    12% {
+      transform: translate(5px, 3px);
+    }
+    14.000000000000002% {
+      transform: translate(2px, 4px);
+    }
+    16% {
+      transform: translate(2px, 1px);
+    }
+    18% {
+      transform: translate(4px, 5px);
+    }
+    20% {
+      transform: translate(3px, 1px);
+    }
+    22% {
+      transform: translate(3px, 5px);
+    }
+    24% {
+      transform: translate(4px, 3px);
+    }
+    26% {
+      transform: translate(5px, 3px);
+    }
+    28.000000000000004% {
+      transform: translate(5px, 5px);
+    }
+    30% {
+      transform: translate(2px, 5px);
+    }
+    32% {
+      transform: translate(5px, 4px);
+    }
+    34% {
+      transform: translate(2px, 4px);
+    }
+    36% {
+      transform: translate(1px, 3px);
+    }
+    38% {
+      transform: translate(3px, 5px);
+    }
+    40% {
+      transform: translate(1px, 5px);
+    }
+    42% {
+      transform: translate(4px, 5px);
+    }
+    44% {
+      transform: translate(3px, 1px);
+    }
+    46.00000000000001% {
+      transform: translate(3px, 2px);
+    }
+    48% {
+      transform: translate(4px, 5px);
+    }
+    50% {
+      transform: translate(1px, 1px);
+    }
+    52% {
+      transform: translate(1px, 1px);
+    }
+    54% {
+      transform: translate(4px, 1px);
+    }
+    56.00000000000001% {
+      transform: translate(1px, 1px);
+    }
+    58% {
+      transform: translate(2px, 2px);
+    }
+    60% {
+      transform: translate(5px, 5px);
+    }
+    62% {
+      transform: translate(4px, 1px);
+    }
+    64% {
+      transform: translate(2px, 3px);
+    }
+    66% {
+      transform: translate(3px, 4px);
+    }
+    68% {
+      transform: translate(4px, 2px);
+    }
+    70.00000000000001% {
+      transform: translate(3px, 2px);
+    }
+    72% {
+      transform: translate(3px, 3px);
+    }
+    74% {
+      transform: translate(2px, 4px);
+    }
+    76% {
+      transform: translate(4px, 2px);
+    }
+    78% {
+      transform: translate(1px, 5px);
+    }
+    80% {
+      transform: translate(2px, 1px);
+    }
+    82.00000000000001% {
+      transform: translate(5px, 5px);
+    }
+    84% {
+      transform: translate(2px, 1px);
+    }
+    86% {
+      transform: translate(2px, 2px);
+    }
+    88% {
+      transform: translate(4px, 4px);
+    }
+    90% {
+      transform: translate(4px, 1px);
+    }
+    92.00000000000001% {
+      transform: translate(4px, 2px);
+    }
+    94% {
+      transform: translate(3px, 1px);
+    }
+    96% {
+      transform: translate(1px, 3px);
+    }
+    98% {
+      transform: translate(2px, 4px);
+    }
+    100% {
+      transform: translate(4px, 2px);
+    }
+    1% {
+      transform: scaleY(1) skewX(0deg);
+    }
+    1.5% {
+      transform: scaleY(3) skewX(-60deg);
+    }
+    2% {
+      transform: scaleY(1) skewX(0deg);
+    }
+    51% {
+      transform: scaleX(1) scaleY(1) skewX(0deg);
+    }
+    52% {
+      transform: scaleX(1.5) scaleY(0.2) skewX(80deg);
+    }
+    53% {
+      transform: scaleX(1) scaleY(1) skewX(0deg);
+    }
+}
+
+.glitch .clone-1,
+.glitch .clone-2 {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  color: #fff;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch .clone-1 {
+    left: -2px;
+    text-shadow: 2px 0 #00f7ff;
+}
+
+.glitch:hover .clone-1 {
+    -webkit-animation: c2 1s infinite linear alternate-reverse;
+    animation: c2 1s infinite linear alternate-reverse;
+}
+
+.glitch .clone-1 img {
+    filter: drop-shadow(3px 0px 0px #00f7ff);
+}
+
+.clone-1 .button.glitch-target {
+    box-shadow: 7px 2px 0 2px #00f7ff;
+    mix-blend-mode: unset;
+    background-color: white;
+    color: #00f7ff;
+    font-weight: 900;
+}
+
+.glitch .clone-1, .glitch .clone-2 {
+    overflow: visible;
+}
+
+.clone-1 .side-button {
+    box-shadow: 7px 1px 0 1px #00f7ff;
+}
+
+.glitch .clone-2 {
+    left: 3px;
+    text-shadow: -2px 0 #ff4800;
+}
+
+.clone-2 .button.glitch-target {
+    box-shadow: 2px 2px 0 2px #ff4800;
+    mix-blend-mode: unset;
+    background-color: white;
+    color: #ff4800;
+}
+
+.clone-2 .side-button {
+    box-shadow: 2px -2px 0 1px #ff4800;
+}
+
+
+.glitch:hover .clone-2 {
+    -webkit-animation: c1 2s infinite linear alternate-reverse;
+    animation: c1 2s infinite linear alternate-reverse;
+}
+
+.glitch .clone-2 img {
+    filter: drop-shadow(3px 0px 0px #ff4800);
+}
+
+@-webkit-keyframes c1 {
+    0% {
+      clip: rect(18px, 9999px, 26px, 0);
+    }
+    5% {
+      clip: rect(96px, 9999px, 28px, 0);
+    }
+    10% {
+      clip: rect(31px, 9999px, 50px, 0);
+    }
+    15.000000000000002% {
+      clip: rect(16px, 9999px, 22px, 0);
+    }
+    20% {
+      clip: rect(58px, 9999px, 41px, 0);
+    }
+    25% {
+      clip: rect(90px, 9999px, 67px, 0);
+    }
+    30.000000000000004% {
+      clip: rect(62px, 9999px, 53px, 0);
+    }
+    35.00000000000001% {
+      clip: rect(88px, 9999px, 71px, 0);
+    }
+    40% {
+      clip: rect(82px, 9999px, 34px, 0);
+    }
+    45% {
+      clip: rect(69px, 9999px, 28px, 0);
+    }
+    50% {
+      clip: rect(47px, 9999px, 74px, 0);
+    }
+    55% {
+      clip: rect(76px, 9999px, 84px, 0);
+    }
+    60.00000000000001% {
+      clip: rect(66px, 9999px, 34px, 0);
+    }
+    65% {
+      clip: rect(16px, 9999px, 61px, 0);
+    }
+    70.00000000000001% {
+      clip: rect(42px, 9999px, 67px, 0);
+    }
+    75% {
+      clip: rect(22px, 9999px, 62px, 0);
+    }
+    80% {
+      clip: rect(83px, 9999px, 6px, 0);
+    }
+    85% {
+      clip: rect(3px, 9999px, 37px, 0);
+    }
+    90% {
+      clip: rect(33px, 9999px, 4px, 0);
+    }
+    95% {
+      clip: rect(78px, 9999px, 55px, 0);
+    }
+    100% {
+      clip: rect(93px, 9999px, 94px, 0);
+    }
+}
+@keyframes c1 {
+    0% {
+      clip: rect(18px, 9999px, 26px, 0);
+    }
+    5% {
+      clip: rect(96px, 9999px, 28px, 0);
+    }
+    10% {
+      clip: rect(31px, 9999px, 50px, 0);
+    }
+    15.000000000000002% {
+      clip: rect(16px, 9999px, 22px, 0);
+    }
+    20% {
+      clip: rect(58px, 9999px, 41px, 0);
+    }
+    25% {
+      clip: rect(90px, 9999px, 67px, 0);
+    }
+    30.000000000000004% {
+      clip: rect(62px, 9999px, 53px, 0);
+    }
+    35.00000000000001% {
+      clip: rect(88px, 9999px, 71px, 0);
+    }
+    40% {
+      clip: rect(82px, 9999px, 34px, 0);
+    }
+    45% {
+      clip: rect(69px, 9999px, 28px, 0);
+    }
+    50% {
+      clip: rect(47px, 9999px, 74px, 0);
+    }
+    55% {
+      clip: rect(76px, 9999px, 84px, 0);
+    }
+    60.00000000000001% {
+      clip: rect(66px, 9999px, 34px, 0);
+    }
+    65% {
+      clip: rect(16px, 9999px, 61px, 0);
+    }
+    70.00000000000001% {
+      clip: rect(42px, 9999px, 67px, 0);
+    }
+    75% {
+      clip: rect(22px, 9999px, 62px, 0);
+    }
+    80% {
+      clip: rect(83px, 9999px, 6px, 0);
+    }
+    85% {
+      clip: rect(3px, 9999px, 37px, 0);
+    }
+    90% {
+      clip: rect(33px, 9999px, 4px, 0);
+    }
+    95% {
+      clip: rect(78px, 9999px, 55px, 0);
+    }
+    100% {
+      clip: rect(93px, 9999px, 94px, 0);
+    }
+}
+@-webkit-keyframes c2 {
+    0% {
+      clip: rect(97px, 9999px, 2px, 0);
+    }
+    5% {
+      clip: rect(54px, 9999px, 95px, 0);
+    }
+    10% {
+      clip: rect(1px, 9999px, 1px, 0);
+    }
+    15.000000000000002% {
+      clip: rect(12px, 9999px, 84px, 0);
+    }
+    20% {
+      clip: rect(55px, 9999px, 48px, 0);
+    }
+    25% {
+      clip: rect(15px, 9999px, 18px, 0);
+    }
+    30.000000000000004% {
+      clip: rect(12px, 9999px, 31px, 0);
+    }
+    35.00000000000001% {
+      clip: rect(65px, 9999px, 80px, 0);
+    }
+    40% {
+      clip: rect(61px, 9999px, 21px, 0);
+    }
+    45% {
+      clip: rect(47px, 9999px, 54px, 0);
+    }
+    50% {
+      clip: rect(77px, 9999px, 85px, 0);
+    }
+    55% {
+      clip: rect(12px, 9999px, 17px, 0);
+    }
+    60.00000000000001% {
+      clip: rect(37px, 9999px, 64px, 0);
+    }
+    65% {
+      clip: rect(7px, 9999px, 64px, 0);
+    }
+    70.00000000000001% {
+      clip: rect(92px, 9999px, 82px, 0);
+    }
+    75% {
+      clip: rect(57px, 9999px, 94px, 0);
+    }
+    80% {
+      clip: rect(20px, 9999px, 7px, 0);
+    }
+    85% {
+      clip: rect(85px, 9999px, 100px, 0);
+    }
+    90% {
+      clip: rect(67px, 9999px, 2px, 0);
+    }
+    95% {
+      clip: rect(22px, 9999px, 64px, 0);
+    }
+    100% {
+      clip: rect(9px, 9999px, 76px, 0);
+    }
+    23% {
+      transform: scaleX(0.8);
+    }
+}
+@keyframes c2 {
+    0% {
+      clip: rect(97px, 9999px, 2px, 0);
+    }
+    5% {
+      clip: rect(54px, 9999px, 95px, 0);
+    }
+    10% {
+      clip: rect(1px, 9999px, 1px, 0);
+    }
+    15.000000000000002% {
+      clip: rect(12px, 9999px, 84px, 0);
+    }
+    20% {
+      clip: rect(55px, 9999px, 48px, 0);
+    }
+    25% {
+      clip: rect(15px, 9999px, 18px, 0);
+    }
+    30.000000000000004% {
+      clip: rect(12px, 9999px, 31px, 0);
+    }
+    35.00000000000001% {
+      clip: rect(65px, 9999px, 80px, 0);
+    }
+    40% {
+      clip: rect(61px, 9999px, 21px, 0);
+    }
+    45% {
+      clip: rect(47px, 9999px, 54px, 0);
+    }
+    50% {
+      clip: rect(77px, 9999px, 85px, 0);
+    }
+    55% {
+      clip: rect(12px, 9999px, 17px, 0);
+    }
+    60.00000000000001% {
+      clip: rect(37px, 9999px, 64px, 0);
+    }
+    65% {
+      clip: rect(7px, 9999px, 64px, 0);
+    }
+    70.00000000000001% {
+      clip: rect(92px, 9999px, 82px, 0);
+    }
+    75% {
+      clip: rect(57px, 9999px, 94px, 0);
+    }
+    80% {
+      clip: rect(20px, 9999px, 7px, 0);
+    }
+    85% {
+      clip: rect(85px, 9999px, 100px, 0);
+    }
+    90% {
+      clip: rect(67px, 9999px, 2px, 0);
+    }
+    95% {
+      clip: rect(22px, 9999px, 64px, 0);
+    }
+    100% {
+      clip: rect(9px, 9999px, 76px, 0);
+    }
+    23% {
+      transform: scaleX(0.8);
+    }
+}
