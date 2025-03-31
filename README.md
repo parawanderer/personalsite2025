@@ -2,9 +2,9 @@
 
 Source code for my 2025 personal website revamp.
 
-Some more pictures [here](./docs/)
+Some more pictures [here](./docs/). And a video [here](https://youtu.be/8iNIcQxMEDg)
 
-[![Screenshot of website main page](./docs/main_page.png)](./docs/)
+[![Screenshot of website main page](./docs/main_page.png)](https://youtu.be/8iNIcQxMEDg)
 
 ## Notes
 
