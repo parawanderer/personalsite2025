@@ -26,6 +26,7 @@ Mind me, I'm a generalist SWE that lately mostly did distributed systems/backend
 - It's not as optimised as it could be. More stuff (particularly time-bound position updates for e.g. the particles) could be moved into the shaders
 - Honestly no idea if this will run on the average visitor's computer lol. For me it was hitting 230 FPS relatively consistently, but YMMV
 - It's not automatically unit-tested whatsoever! There are certainly a few classes that could be tested, and I suppose you could write some headless browser automated test if you really wanted to be thorough
+- I wanted to add a "glitch" effect in the actual 3D environment but ended up being too lazy to set it up. Something like [this one](https://domenicobrz.github.io/webgl/projects/experiment1/) has would be neat, but this requires way more setup than just using the glitch effect.
 
 -----------
 ## Development
