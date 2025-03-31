@@ -49,6 +49,7 @@ import { ShaderPass } from 'three/addons/postprocessing/ShaderPass';
 import { DebugInfoDisplay } from './ui/debug-info';
 import { ForegroundManager } from './ui/foreground-manager';
 import { moveCameraTo } from './animate/camera';
+import { FilmPass } from './postprocessing/filmpass';
 
 (async () => { // <- stupid hack to allow using "await" in this body
 
@@ -142,7 +143,7 @@ const debugInfoUI = new DebugInfoDisplay(DEBUG, camera);
 // effects
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
-// composer.addPass(new FilmPass(clock, 0.8));
+composer.addPass(new FilmPass(clock, 0.4));
 //composer.addPass(new SMAAPass());
 const fxaaPass = new ShaderPass(FXAAShader);
 fxaaPass.uniforms['resolution'].value.set(1 / width, 1 / height);

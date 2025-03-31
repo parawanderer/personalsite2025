@@ -2,6 +2,10 @@
 
 Source code for my 2025 personal website revamp.
 
+Some more pictures [here](./docs/)
+
+[![Screenshot of website main page](./docs/main_page.png)](./docs/)
+
 ## Notes
 
 I was curious how far and artistic you can go with Javascript these days since the last personal webpage I had. I think back then having animated SVGs was the "new thing", hence I included that in my old (very basic) personal web page.
