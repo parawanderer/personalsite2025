@@ -115,6 +115,12 @@ https://github.com/vineethtrv/css-loader
     height: 100vh;
 }
 
+.outline-inner {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
 .logo-container {
     position: absolute;
     left: 0;
@@ -207,17 +213,16 @@ https://github.com/vineethtrv/css-loader
 
 @keyframes inside-out {
     from {
-        stroke-dasharray: 0 100;
-        stroke-dashoffset: 50;
+        stroke-dashoffset: 400%;
     }
-
     to {
-        stroke-dasharray: 100 0;
-        stroke-dashoffset: 100;
+        stroke-dashoffset: 0%;
     }
 }
 
 svg .anim * {
+    stroke-dasharray: 400%;
+    stroke-dashoffset: 0%;
     animation: inside-out 5s ease-in-out;
 }
 
@@ -291,7 +296,7 @@ svg .anim * {
     font-weight: 200;
     color: white;
     border-radius: 40pt;
-    font-size: 7pt;
+    font-size: 8pt;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,7 +315,7 @@ svg .anim * {
     margin-right: auto;
 }
 .side-button.github .side-button-text {
-    width: 57pt;
+    width: 68pt;
 }
 
 .side-button.animate-appear {

@@ -20,16 +20,18 @@
   </head>
   <body id="primaryContainer" class="container">
     <div class="window-outline hideable-ui">
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs>
-                <g id="gg">
-                    <rect id="rect" x="2%" y="2%" width="96%" height="96%"></rect>
+        <div class="outline-inner">
+            <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <g id="gg">
+                        <rect id="rect" x="0" y="0" width="100%" height="100%"></rect>
+                    </g>
+                </defs>
+                <g class="anim" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <use xlink:href="#rect" class="rect" />
                 </g>
-            </defs>
-            <g class="anim" fill="none" stroke="#FFFFFF" stroke-width="0.1" stroke-linecap="round" stroke-linejoin="round">
-                <use xlink:href="#rect" class="rect" />
-            </g>
-        </svg>
+            </svg>
+        </div>
     </div>
     <div id="logo" class="logo-container hideable-ui">
         <div>

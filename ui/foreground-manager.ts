@@ -88,8 +88,11 @@ export class ForegroundManager {
 
 
         const controlsDesktopExplain = getByIdOrThrow("controlsDesktopExplain");
+        const mobileWarning = getByIdOrThrow("controlsMobileExplain");
         if (this.isMobile) {
             controlsDesktopExplain.style.display = "none";
+        } else {
+            mobileWarning.style.display = "none";
         }
     }
 
