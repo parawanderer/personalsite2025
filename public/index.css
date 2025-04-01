@@ -261,11 +261,22 @@ svg .anim * {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5em 1em;
+    padding-top: 0.5em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
     cursor: pointer;
-    width: 82pt;
+    width: max-content;
     text-decoration: none;
     text-align: center;
+}
+
+.side-button-text {
+    margin-left: auto;
+    margin-right: auto;
+}
+.side-button.github .side-button-text {
+    width: 57pt;
 }
 
 .side-button.animate-appear {
@@ -277,7 +288,8 @@ svg .anim * {
 
 .side-button img {
     width: 2em;
-    margin-right: 1em;
+    margin-right: auto;
+    padding-right: 0.75em;
 }
 
 .button-container {

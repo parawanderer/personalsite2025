@@ -1,3 +1,4 @@
+import { Vector3 } from "three";
 import { Color } from "./utils/color";
 
 // show debug stuff
@@ -21,6 +22,31 @@ export const CAMERA_INITIAL_Z = 5.24;
 
 export const CAMERA_SPEED = 2;
 export const CAMERA_LOOK_SPEED = 0.2;
+
+
+// camera:scene
+
+export const CAMERA_HOME_POS = new Vector3(CAMERA_INITIAL_X, CAMERA_INITIAL_Y, CAMERA_INITIAL_Z);
+export const CAMERA_HOME_DIR = new Vector3(CAMERA_INITIAL_X, CAMERA_INITIAL_Y, CAMERA_INITIAL_Z-1);
+
+export const CAMERA_ABOUT_ME_X = -0.8113;
+export const CAMERA_ABOUT_ME_Y = -0.5845;
+export const CAMERA_ABOUT_ME_Z = 3.5314;
+export const CAMERA_ABOUT_ME_DIRECTION_X = -3;
+export const CAMERA_ABOUT_ME_DIRECTION_Y = -2;
+export const CAMERA_ABOUT_ME_DIRECTION_Z = 0;
+export const CAMERA_ABOUT_ME_POS = new Vector3(CAMERA_ABOUT_ME_X, CAMERA_ABOUT_ME_Y, CAMERA_ABOUT_ME_Z);
+export const CAMERA_ABOUT_ME_DIR = new Vector3(CAMERA_ABOUT_ME_DIRECTION_X, CAMERA_ABOUT_ME_DIRECTION_Y, CAMERA_ABOUT_ME_DIRECTION_Z-1);
+
+export const CAMERA_CONTACT_X = 0;
+export const CAMERA_CONTACT_Y = 0;
+export const CAMERA_CONTACT_Z = 10;
+export const CAMERA_CONTACT_DIRECTION_X = 0;
+export const CAMERA_CONTACT_DIRECTION_Y = 0;
+export const CAMERA_CONTACT_DIRECTION_Z = 9;
+export const CAMERA_CONTACT_POS = new Vector3(CAMERA_CONTACT_X, CAMERA_CONTACT_Y, CAMERA_CONTACT_Z);
+export const CAMERA_CONTACT_DIR = new Vector3(CAMERA_CONTACT_DIRECTION_X, CAMERA_CONTACT_DIRECTION_Y, CAMERA_CONTACT_DIRECTION_Z);
+
 
 // VISUALS
 export const BACKGROUND_COLOR = Color.fromHex("#8dd1cd");
@@ -81,3 +107,6 @@ export const DUST_SIZE_CYAN = 0.01;
 export const TEXTURE_PARTICLE_RED = 'particle_small_redish.png';
 export const DUST_AMOUNT_RED = 400;
 export const DUST_SIZE_RED = 0.005;
+
+export const DUST_CENTER = new Vector3(0, 1, CAMERA_INITIAL_Z + DUST_CAMERA_OFFSET_FRONT);
+export const ROTATING_DUST_CENTER = new Vector3(CAMERA_INITIAL_X, CAMERA_INITIAL_Y, CAMERA_INITIAL_Z-1.5);

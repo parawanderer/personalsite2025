@@ -1,5 +1,5 @@
 import { AnimatedEntity } from "entity/animated-entity";
-import { Camera, Clock, DoubleSide, InstancedBufferAttribute, InstancedMesh, Matrix4, Mesh, MeshBasicMaterial, Object3DEventMap, PlaneGeometry, Quaternion, Scene, Vector3 } from "three";
+import { Camera, Clock, DoubleSide, InstancedBufferAttribute, InstancedMesh, LoadingManager, Matrix4, Mesh, MeshBasicMaterial, Object3DEventMap, PlaneGeometry, Quaternion, Scene, Vector3 } from "three";
 import { randFloat } from "three/src/math/MathUtils.js";
 import { Queue } from "../utils/datastructures";
 import { getTexture } from "../utils/texture-utils";
@@ -286,51 +286,50 @@ export class RotatingDustEmitter extends DustEmitter {
     }
 }
 
+export class DustFactory {
+    constructor(private loadingMgr: LoadingManager, private scene: Scene, private camera: Camera) {}
 
-export const createDust = (
-    scene: Scene,
-    camera: Camera,
-    texturePath: string,
-    pos: Vector3,
-    spawnRadius: number,
-    maxAmount: number,
-    dustSize: number,
-    initialSpawn: number
-): DustEmitter => {
-    const emitter = new DustEmitter(
-        texturePath,
-        pos,
-        spawnRadius,
-        scene,
-        camera,
-        maxAmount,
-        dustSize,
-        0.0,
-        UNITS_PER_MS_REGULAR,
-        initialSpawn
-    );
+    public makeDust(
+        texturePath: string,
+        pos: Vector3,
+        spawnRadius: number,
+        maxAmount: number,
+        dustSize: number,
+        initialSpawn: number
+    ): DustEmitter {
+        const emitter = new DustEmitter(
+            texturePath,
+            pos,
+            spawnRadius,
+            this.scene,
+            this.camera,
+            maxAmount,
+            dustSize,
+            0.0,
+            UNITS_PER_MS_REGULAR,
+            initialSpawn
+        );
 
-    return emitter;
-}
+        return emitter;
+    }
 
-export const createRotatingDust = (
-    scene: Scene,
-    camera: Camera,
-    texturePath: string,
-    pos: Vector3,
-    rotationRadius: number,
-    maxAmount: number,
-    dustSize: number
-): DustEmitter => {
-    const emitter = new RotatingDustEmitter(
-        texturePath,
-        pos,
-        rotationRadius,
-        scene,
-        camera,
-        maxAmount,
-        dustSize
-    );
+    public makeRotatingDust(
+        texturePath: string,
+        pos: Vector3,
+        rotationRadius: number,
+        maxAmount: number,
+        dustSize: number
+    ): DustEmitter {
+        const emitter = new RotatingDustEmitter(
+            texturePath,
+            pos,
+            rotationRadius,
+            this.scene,
+            this.camera,
+            maxAmount,
+            dustSize
+        );
 
-    return emitter;
+        return emitter;
+    }
 }

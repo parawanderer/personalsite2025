@@ -1,4 +1,4 @@
-import { Clock, PlaneGeometry, RepeatWrapping, Scene, TextureLoader, Vector3 } from "three";
+import { Clock, LoadingManager, PlaneGeometry, RepeatWrapping, Scene, TextureLoader, Vector3 } from "three";
 import { Water as ThreeWater } from "three/addons/objects/Water";
 
 import {
@@ -50,53 +50,56 @@ export class Water implements AnimatedEntity {
     }
 }
 
+export class WaterFactory {
+    constructor(private loadingMgr: LoadingManager, private scene: Scene) {}
 
-export const makeWater = (scene: Scene, normalsPath: string, offsetZ: number): Water => {
-    const width = 2*ROW_LENGTH_X + 2*WALLS_OFFSET;
-    const depth = CAMERA_INITIAL_Z + ROW_LENGTH_Z*2;
+    public makeWater(normalsPath: string, offsetZ: number): Water {
+        const width = 2*ROW_LENGTH_X + 2*WALLS_OFFSET;
+        const depth = CAMERA_INITIAL_Z + ROW_LENGTH_Z*2;
 
-    const geometry = new PlaneGeometry(width, depth);
+        const geometry = new PlaneGeometry(width, depth);
 
-    const water = new ThreeWater(geometry, {
-        textureWidth: 512,
-        textureHeight: 512,
-        waterNormals: new TextureLoader().load(normalsPath, (texture) => {
-            texture.wrapS = texture.wrapT = RepeatWrapping;
-        }),
-        sunDirection: new Vector3(0, 10, -10),
-        sunColor: WATER_SUN_COLOR,
-        waterColor: WATER_COLOR,
-        distortionScale: 0.25,
-        fog: true,
-    });
+        const water = new ThreeWater(geometry, {
+            textureWidth: 512,
+            textureHeight: 512,
+            waterNormals: new TextureLoader().load(normalsPath, (texture) => {
+                texture.wrapS = texture.wrapT = RepeatWrapping;
+            }),
+            sunDirection: new Vector3(0, 10, -10),
+            sunColor: WATER_SUN_COLOR,
+            waterColor: WATER_COLOR,
+            distortionScale: 0.25,
+            fog: true,
+        });
 
-    const fogShader: ShaderExtension = customFogExtension({
-        fogNearColor: PILLARS_FOG_NEAR_COLOR,
-        fogFarColor: PILLARS_FOG_FAR_COLOR,
-        fogNoiseFreq: PILLARS_FOG_NOISE_FREQ,
-        fogNoiseImpact: PILLARS_FOG_NOISE_IMPACT,
-        fogTime: 0,
-        fogNoiseSpeed: PILLARS_FOG_NOISE_SPEED,
-        fogFrag,
-        fogParsFrag,
-        fogParsVert,
-        fogVert
-    });
+        const fogShader: ShaderExtension = customFogExtension({
+            fogNearColor: PILLARS_FOG_NEAR_COLOR,
+            fogFarColor: PILLARS_FOG_FAR_COLOR,
+            fogNoiseFreq: PILLARS_FOG_NOISE_FREQ,
+            fogNoiseImpact: PILLARS_FOG_NOISE_IMPACT,
+            fogTime: 0,
+            fogNoiseSpeed: PILLARS_FOG_NOISE_SPEED,
+            fogFrag,
+            fogParsFrag,
+            fogParsVert,
+            fogVert
+        });
 
-    water.receiveShadow = true;
+        water.receiveShadow = true;
 
-    water.material.onBeforeCompile = fogShader.handle;
+        water.material.onBeforeCompile = fogShader.handle;
 
-    water.position.x = 0;
-    water.position.z = offsetZ + (-2*ROW_LENGTH_X)+3;
-    water.position.y = -1;
-    water.rotation.x = - Math.PI / 2;
+        water.position.x = 0;
+        water.position.z = offsetZ + (-2*ROW_LENGTH_X)+3;
+        water.position.y = -1;
+        water.rotation.x = - Math.PI / 2;
 
 
-    const waterUniforms = water.material.uniforms;
-    waterUniforms['size'].value = 10;
+        const waterUniforms = water.material.uniforms;
+        waterUniforms['size'].value = 10;
 
-    scene.add(water);
+        this.scene.add(water);
 
-    return new Water(water, fogShader);
+        return new Water(water, fogShader);
+    }
 }

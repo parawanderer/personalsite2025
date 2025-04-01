@@ -1,6 +1,6 @@
 import { Queue } from '@datastructures-js/queue';
 
-import { BufferGeometry, Clock, CylinderGeometry, Mesh, MeshPhysicalMaterial, Object3DEventMap, RepeatWrapping, Scene, SRGBColorSpace } from 'three';
+import { BufferGeometry, Clock, CylinderGeometry, LoadingManager, Mesh, MeshPhysicalMaterial, Object3DEventMap, RepeatWrapping, Scene, SRGBColorSpace } from 'three';
 import { degToRad, randFloat, randInt } from 'three/src/math/MathUtils.js';
 
 import { CAMERA_INITIAL_Z, FOG_UPDATE_BY, FOG_UPDATE_EVERY_MS, PILLARS_FOG_FAR_COLOR, PILLARS_FOG_NEAR_COLOR, PILLARS_FOG_NOISE_FREQ, PILLARS_FOG_NOISE_IMPACT, PILLARS_FOG_NOISE_SPEED, PILLARS_GEOGRAPHY_MAP, ROW_LENGTH_X, ROW_LENGTH_Z, SCALE_FACTOR, WALLS_OFFSET  } from '../constants';
@@ -130,13 +130,13 @@ const createRandomColumnsHeightMap = async () : Promise<number[][]> => {
 
         if (distance !== -1) {
             // only generate a height for non-"water" slots
-            grid[i][j] = getHeightForDistance(distance);
+            grid[i][j] = getHeightForDistance(distance!);
         }
 
         for (const neighbor of neighbors) {
             if (grid[neighbor.i][neighbor.j] === UNPOPULATED) {
                 grid[neighbor.i][neighbor.j] = VISITED;
-                q.push({i: neighbor.i, j: neighbor.j, distance: distance + 1});
+                q.push({i: neighbor.i, j: neighbor.j, distance: distance! + 1});
             }
         }
 
@@ -161,91 +161,93 @@ export class Walls implements AnimatedEntity {
     }
 }
 
+export class WallsFactory {
+    constructor(private loadingMgr: LoadingManager, private scene: Scene) {}
 
-export const createWalls = async (scene: Scene, extraOffsetZ: number): Promise<Walls> => {
-    const geometry = new CylinderGeometry(RADIUS, RADIUS, 1, CYLINDER_RADIAL_SEGMENTS_HEXAGON);
+    public async makeWalls(extraOffsetZ: number): Promise<Walls> {
+        const geometry = new CylinderGeometry(RADIUS, RADIUS, 1, CYLINDER_RADIAL_SEGMENTS_HEXAGON);
 
-    const materialTextures = getPBRMaterialTextures(
-        `storm_marble_2-1K/1K_storm___honed___marble_2_${PLACEHOLDER}.png`,
-        {
-            wrapS: RepeatWrapping,
-            wrapT: RepeatWrapping,
-            colorSpace: SRGBColorSpace
+        const materialTextures = getPBRMaterialTextures(
+            `storm_marble_2-1K/1K_storm___honed___marble_2_${PLACEHOLDER}.png`,
+            {
+                wrapS: RepeatWrapping,
+                wrapT: RepeatWrapping,
+                colorSpace: SRGBColorSpace
+            }
+        );
+
+        const material: MeshPhysicalMaterial = new MeshPhysicalMaterial({
+            ...materialTextures,
+            //clearcoat: 0.07,
+            displacementScale: 0.001,
+            iridescence: 0.2,
+            specularIntensity: 1.0,
+            metalness: 0.3,
+            flatShading: true // force appearance to not get rounded to get proper hexagons
+        });
+
+        const fogShader: ShaderExtension = customFogExtension({
+            fogNearColor: PILLARS_FOG_NEAR_COLOR,
+            fogFarColor: PILLARS_FOG_FAR_COLOR,
+            fogNoiseFreq: PILLARS_FOG_NOISE_FREQ,
+            fogNoiseImpact: PILLARS_FOG_NOISE_IMPACT,
+            fogTime: 0,
+            fogNoiseSpeed: PILLARS_FOG_NOISE_SPEED,
+            fogFrag,
+            fogParsFrag,
+            fogParsVert,
+            fogVert
+        });
+
+        material.onBeforeCompile = fogShader.handle;
+
+        const grid = await createRandomColumnsHeightMap();
+
+        const geometries: CylinderGeometry[] = [];
+
+        const plannedWidth = grid.length*SCALE_FACTOR;
+        const plannedDepth = grid[0].length*SCALE_FACTOR;
+
+        const offsetX = -plannedWidth/2;
+        const offsetZ = extraOffsetZ - plannedDepth;
+
+        for (let i = 0; i < grid.length; ++i) {
+            for (let j = 0; j < grid[0].length; ++j) {
+                if (grid[i][j] <= 0.0) continue;
+                const requiredHeight = grid[i][j];
+
+                const instanceGeo = geometry.clone();
+
+                instanceGeo.rotateY(randFloat(0, ANGLE_SELF_ROTATE));
+
+                instanceGeo.scale(1, requiredHeight, 1);
+
+                instanceGeo.rotateY(randFloat(ANGLE_VARIANCE_Y_MIN, ANGLE_VARIANCE_Y_MAX));
+                instanceGeo.rotateX(BASE_ANGLE_X + randFloat(0, ANGLE_VARIANCE_X));
+                instanceGeo.rotateZ(randFloat(ANGLE_VARIANCE_Z_MIN, ANGLE_VARIANCE_Z_MAX));
+
+                instanceGeo.translate(
+                    (i*SCALE_FACTOR) + offsetX,
+                    -1,
+                    (j*SCALE_FACTOR) + offsetZ
+                );
+
+                geometries.push(instanceGeo);
+            }
         }
-    );
 
-    const material: MeshPhysicalMaterial = new MeshPhysicalMaterial({
-        ...materialTextures,
-        //clearcoat: 0.07,
-        displacementScale: 0.001,
-        iridescence: 0.2,
-        specularIntensity: 1.0,
-        metalness: 0.3,
-        flatShading: true // force appearance to not get rounded to get proper hexagons
-    });
+        const mergedGeometry = mergeGeometries(geometries);
+        const mergedMesh = new Mesh(mergedGeometry, material);
+        this.scene.add(mergedMesh);
 
-    const fogShader: ShaderExtension = customFogExtension({
-        fogNearColor: PILLARS_FOG_NEAR_COLOR,
-        fogFarColor: PILLARS_FOG_FAR_COLOR,
-        fogNoiseFreq: PILLARS_FOG_NOISE_FREQ,
-        fogNoiseImpact: PILLARS_FOG_NOISE_IMPACT,
-        fogTime: 0,
-        fogNoiseSpeed: PILLARS_FOG_NOISE_SPEED,
-        fogFrag,
-        fogParsFrag,
-        fogParsVert,
-        fogVert
-    });
-
-    material.onBeforeCompile = fogShader.handle;
-
-    const grid = await createRandomColumnsHeightMap();
-
-    const geometries: CylinderGeometry[] = [];
-
-    const plannedWidth = grid.length*SCALE_FACTOR;
-    const plannedDepth = grid[0].length*SCALE_FACTOR;
-
-    const offsetX = -plannedWidth/2;
-    const offsetZ = extraOffsetZ - plannedDepth;
-
-    for (let i = 0; i < grid.length; ++i) {
-        for (let j = 0; j < grid[0].length; ++j) {
-            if (grid[i][j] <= 0.0) continue;
-            const requiredHeight = grid[i][j];
-
-            const instanceGeo = geometry.clone();
-
-            instanceGeo.rotateY(randFloat(0, ANGLE_SELF_ROTATE));
-
-            instanceGeo.scale(1, requiredHeight, 1);
-
-            instanceGeo.rotateY(randFloat(ANGLE_VARIANCE_Y_MIN, ANGLE_VARIANCE_Y_MAX));
-            instanceGeo.rotateX(BASE_ANGLE_X + randFloat(0, ANGLE_VARIANCE_X));
-            instanceGeo.rotateZ(randFloat(ANGLE_VARIANCE_Z_MIN, ANGLE_VARIANCE_Z_MAX));
-
-            instanceGeo.translate(
-                (i*SCALE_FACTOR) + offsetX,
-                -1,
-                (j*SCALE_FACTOR) + offsetZ
-            );
-
-            geometries.push(instanceGeo);
-        }
+        return new Walls(
+            plannedWidth,
+            plannedDepth,
+            mergedMesh,
+            fogShader!
+        );
     }
-
-    const mergedGeometry = mergeGeometries(geometries);
-    const mergedMesh = new Mesh(mergedGeometry, material);
-    scene.add(mergedMesh);
-
-    return new Walls(
-        plannedWidth,
-        plannedDepth,
-        mergedMesh,
-        fogShader!
-    );
-};
-
+}
 
 const getHeightDistanceOne = () => {
     if (randInt(0, 20) < 20) {
