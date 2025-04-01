@@ -21,7 +21,7 @@ Mind me, I'm a generalist SWE that lately mostly did distributed systems/backend
 
 ## Issues
 
-- I wrote this while looking at a desktop computer browser. I have no idea what this looks like on mobile and I am too lazy to make it compatible. I think mobile interfaces generally have to be designed intentionally to make sense, rather than just trying to make existing UI "responsive"
+- I wrote this while looking at a desktop computer browser and it's really built around being viewed on a browser, not all mobile device resolutions/orientations are supported. I was too lazy to implement my own mobile controls (the module I used from three.js for the keyboard controls does not support mobile out-of-the-box).
 - It seems that even on my rather overpriced "gaming" laptop, there's some issue where when trying to render my "glitching" animation on top of some more "complex" (in the sense of a lot of things changing simultaneously) WebGL animation in the background, such that even my laptop starts having hickups. I suppose it fits the "glitching" theme, but this isn't really intentional.
 - It's not as optimised as it could be. More stuff (particularly time-bound position updates for e.g. the particles) could be moved into the shaders
 - Honestly no idea if this will run on the average visitor's computer lol. For me it was hitting 230 FPS relatively consistently, but YMMV
