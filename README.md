@@ -70,3 +70,7 @@ npx vite build
 - The brand icons that I used on the "Contact Me"... "page"... were downloaded from the respective brands' design guidelines
 - [Stone marble texture](https://www.sharetextures.com/textures/floor/storm_marble_1) used on the pillars by M. Tolga Arslan via [sharetextures.com](https://www.sharetextures.com)
 - Various inspiration-sources used for _derivative_ implementations are documented in the code itself
+
+## License
+
+None. OOCPlsDontSteal. Feel free to use this as a reference/inspiration though if you happen to stumble across it.
