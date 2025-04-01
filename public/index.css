@@ -55,6 +55,7 @@ html, body {
     font-size: 10pt;
     margin-top: 2em;
     margin-left: 0.5em;
+    text-align: center;
 }
 
 
@@ -95,6 +96,12 @@ https://github.com/vineethtrv/css-loader
 }
 }
 
+.mobile-warn {
+    border: 1pt solid white;
+    padding: 1.5em;
+    color: white;
+    border-radius: 4pt;
+}
 
 .emphasis {
     font-weight: 600;
@@ -115,8 +122,8 @@ https://github.com/vineethtrv/css-loader
     min-width: 60%;
     width: auto;
     margin-top: 40vh;
-    margin-left: 20vw;
-    margin-right: 20vw;
+    margin-left: 20%;
+    margin-right: 20%;
     transition:
         min-width 2s ease-in-out,
         margin-top 2s ease-in-out,
@@ -240,6 +247,9 @@ svg .anim * {
 
 .left-set {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }
 
 .right-set {
@@ -447,7 +457,7 @@ svg .anim * {
 
 .logo-container.panel-shown {
     margin-top: 7vh;
-    margin-left: 31vw;
+    margin-left: 31%;
     margin-right: auto;
     min-width: 0%;
     width: auto;
@@ -1325,5 +1335,377 @@ reference: https://codepen.io/fearOfCode/pen/PoMyKQ
     }
     23% {
       transform: scaleX(0.8);
+    }
+}
+
+/* Mobile support, kind of */
+
+@media (max-width: 1890px) {
+    .hidden-panel {
+        width: 50%;
+    }
+
+    .logo-container.panel-shown {
+        margin-left: 26%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .hidden-panel {
+        width: 60%;
+    }
+
+    .logo-container.panel-shown {
+        margin-left: 20%;
+    }
+
+    .side-button-text {
+        font-size: 10pt;
+    }
+
+    .side-button.github .side-button-text {
+        width: 100pt;
+    }
+}
+
+@media (max-width: 1320px) {
+    .hidden-panel {
+        width: 75%;
+    }
+
+    .logo-container.panel-shown {
+        margin-left: 15%;
+    }
+
+    .side-button {
+        font-size: 10pt;
+    }
+
+    .button {
+        font-size: 14pt;
+    }
+}
+
+@media (max-width: 1080px) {
+    .button {
+        font-size: 16pt;
+    }
+
+    .hidden-panel {
+        width: 90%;
+    }
+
+    .logo-container.panel-shown {
+        margin-left: 5%;
+    }
+
+    .button-set {
+        flex-wrap: wrap;
+    }
+
+    .button-set > .middle-set {
+        order: 1;
+        flex-basis: 100%;
+    }
+
+    .button-set > .left-set {
+        order: 2;
+        flex-basis: 50%;
+        justify-content: center;
+    }
+
+    .button-set > .right-set {
+        order: 3;
+        flex-basis: 50%;
+        justify-content: center;
+    }
+
+    .left-set > .button-container, .right-set > .button-container {
+        width: 100%;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: 8em;
+        margin-right: 8em;
+        display: flex;
+    }
+
+    .left-set > .button-container {
+        margin-right: 1em;
+    }
+
+    .right-set > .button-container {
+        margin-left: 1em;
+    }
+
+    .side-button {
+        width: 100%;
+    }
+
+    .side-button.github .side-button-text {
+        width: 100%;
+    }
+
+    .side-button img {
+        margin-right: initial;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .left-set > .button-container {
+        margin-left: 2em;
+        margin-bottom: 2em;
+    }
+
+    .right-set > .button-container {
+        margin-right: 2em;
+        margin-bottom: 2em;
+    }
+
+    .logo-container {
+        margin-left: 5%;
+        margin-right: 5%;
+        min-width: 90%;
+    }
+
+    .button {
+        font-size: 20pt;
+        margin: 1em;
+    }
+
+    .button-set {
+        padding: 0;
+    }
+
+    .side-button {
+        font-size: 14pt;
+    }
+
+    .button-set {
+        overflow: hidden;
+        margin-top: 2em;
+    }
+
+    .hidden-panel.show {
+        height: 65vh;
+    }
+
+    .text-panel-content p, .text-panel-content .contact-text {
+        font-size: 14pt;
+    }
+
+    .logo-container.panel-shown .logo-primary {
+        width: 150%;
+    }
+}
+
+@media (max-width: 860px) {
+    .profile-pic {
+        transform: translate(-20%, -35%);
+    }
+
+    .logo-container.panel-shown {
+        margin-top: 4vh;
+    }
+    .text-panel-content {
+        padding: 1em 2em;
+    }
+
+    .text-panel-content p, .text-panel-content .contact-text {
+        font-size: 14pt;
+    }
+
+    .logo-container.panel-shown .name-title {
+        font-size: 20pt;
+    }
+
+    .button {
+        margin: 0 0.25em;
+        font-size: 17pt;
+    }
+
+    .side-button {
+        font-size: 12pt;
+    }
+
+    .left-set > .button-container {
+        margin-right: 0.5em;
+    }
+
+    .right-set > .button-container {
+        margin-left: 0.5em;
+    }
+
+    .left-set > .button-container, .right-set > .button-container {
+        margin-top: 1em;
+    }
+
+    .hidden-panel.show {
+        height: 65vh;
+    }
+
+    .profile-pic {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+@media (max-width: 660px) {
+    .text-panel-content p, .text-panel-content .contact-text {
+        font-size: 14pt;
+    }
+
+    .middle-set {
+        flex-wrap: wrap;
+        margin-bottom: 1em;
+    }
+
+    .middle-set > .button-container {
+        flex-basis: 100%;
+        margin: 0.25em 1em;
+        display: flex;
+    }
+
+    .middle-set > .button-container .button {
+        width: 100%;
+    }
+
+    .left-set, .right-set {
+        display: none;
+    }
+
+    .button {
+        font-size: 14pt;
+    }
+
+    .text-panel-content p, .text-panel-content .contact-text {
+        font-size: 11pt;
+        line-height: 1.6;
+    }
+
+    .about-me-title {
+        margin-bottom: 0.6em;
+    }
+
+    .line {
+        margin-bottom: 0.5em;
+    }
+
+    .text-panel-content {
+        padding: 1.5em;
+    }
+
+    .button-set {
+        margin-top: 1.5em;
+    }
+
+    h1 {
+        font-size: 18pt;
+    }
+
+    .profile-pic {
+        width: 6rem;
+        height: 6rem;
+        transform: translate(-20%, -25%);
+    }
+
+    .logo-container.panel-shown {
+        margin-top: 4vh;
+        margin-left: 4%;
+    }
+
+    .logo-container.panel-shown .name-title {
+        font-size: 14pt;
+    }
+
+    .logo-container.panel-shown .logo-primary {
+        width: 110%;
+    }
+
+    .name-title {
+        font-size: 15pt;
+        margin-left: 0pt;
+        margin-right: 0pt;
+        margin-top: 0.5em;
+    }
+
+    .text-sep {
+        margin: 0 8pt;
+    }
+
+    .animated-line {
+        margin-top: 1em;
+    }
+
+    .logo-container {
+        margin-top: 30vh;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .text-panel-content p, .text-panel-content .contact-text {
+        font-size: 9pt;
+        line-height: 1.6;
+    }
+
+    .button-set {
+        margin-top: 0.5em;
+    }
+
+    .button {
+        font-size: 12pt;
+    }
+
+    .contact-items {
+        margin-top: 1em;
+    }
+
+    .text-panel-content {
+        padding: 1.1em;
+    }
+
+    .profile-pic {
+        width: 4rem;
+        height: 4rem;
+        transform: translate(-40%, -20%);
+    }
+
+    .contact-item {
+        margin-bottom: 0.5em;
+    }
+
+    .hidden-panel.show {
+        height: 62vh;
+    }
+
+    .about-me-title {
+        margin-top: 0.2em;
+    }
+
+    .logo-container.panel-shown .name-title {
+        font-size: 12pt;
+    }
+
+    .logo-container.panel-shown .text-sep {
+        margin: 0 5pt;
+        width: 1.5pt;
+        height: 1.5pt;
+    }
+
+    .logo-container {
+        margin-top: 25vh;
+    }
+
+    .logo-container.panel-shown .logo-primary {
+        width: 100%;
+    }
+
+    .logo-container.panel-shown {
+        width: 92vw;
+    }
+
+    .contact-me-title {
+        margin-top: 0.25em;
     }
 }

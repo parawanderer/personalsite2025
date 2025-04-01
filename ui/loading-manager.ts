@@ -24,7 +24,7 @@ export class LoadingManager extends ThreeLoadingManger {
     }
 
     private _onProgress(url: string, loaded: number, total: number): void {
-        const text = `Loading file: ${url} (${loaded}/${total})`;
+        const text = `Loading files (${loaded}/${total})`;
         console.log(text);
         this.loadingText.innerHTML = text;
     }

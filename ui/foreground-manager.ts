@@ -31,6 +31,12 @@ const addClones = (element: Element) => {
 };
 
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
+const isPrimaryInputMethodTouch = (): boolean => {
+    return window.matchMedia("(pointer: coarse)").matches;
+};
+
+
 export class ForegroundManager {
     private readonly homeButton: HTMLButtonElement;
     private onPressHomeButtonCallback?: () => void;
@@ -48,11 +54,14 @@ export class ForegroundManager {
     private readonly freeFlightUiHints: HTMLDivElement;
     private readonly returnFromFreeFlightButton: HTMLButtonElement;
 
+    private isMobile: boolean;
     private isFreeFlight: boolean = false;
-
     private isUiSwitching: boolean = false;
 
+
     constructor(private interactionManager: InteractionManager) {
+        this.isMobile = isPrimaryInputMethodTouch();
+
         this.logo = getByIdOrThrow('logo');
         getByIdOrThrow('logo-img').parentElement!.addEventListener("click", () => this.onPressHome());
 
@@ -76,6 +85,12 @@ export class ForegroundManager {
         this.returnFromFreeFlightButton.parentElement!.addEventListener("click", () => this.handleFreeFlight());
 
         document.title = TITLE_HOME;
+
+
+        const controlsDesktopExplain = getByIdOrThrow("controlsDesktopExplain");
+        if (this.isMobile) {
+            controlsDesktopExplain.style.display = "none";
+        }
     }
 
     private handleFreeFlight(): void {

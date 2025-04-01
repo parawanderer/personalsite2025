@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>wander.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <link rel="stylesheet" href="public/index.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://wander.dev/assets/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://wander.dev/assets/icon/favicon-32x32.png">
@@ -19,10 +20,10 @@
   </head>
   <body id="primaryContainer" class="container">
     <div class="window-outline hideable-ui">
-        <svg width="100vw" height="100vh" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 100">
+        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100% 100%">
             <defs>
                 <g id="gg">
-                    <rect id="rect" x="0" y="2" width="100%" height="96%"></rect>
+                    <rect id="rect" x="2%" y="2%" width="96%" height="96%"></rect>
                 </g>
             </defs>
             <g class="anim" fill="none" stroke="#FFFFFF" stroke-width="0.1" stroke-linecap="round" stroke-linejoin="round">
@@ -74,7 +75,7 @@
                 </div>
                 <div class="flip-panel-back text-panel contact-panel">
                     <div class="text-panel-content">
-                        <h1>Contact Me ✉️</h1>
+                        <h1 class="contact-me-title">Contact Me ✉️</h1>
                         <span class="line"></span>
                         <p>
                             I'm not particularly active on social media these days, however here are some places you might be able to reach me sometimes:
@@ -134,7 +135,7 @@
             <div class="right-set">
                 <div class="button-container">
                     <a class="side-button github animate-appear glitch-target" href="https://github.com/parawanderer/personalsite2025">
-                        <img src="/github-mark-white.svg" alt="Github Logo">
+                        <img src="/github-mark-white.svg" target="_blank" alt="Github Logo">
                         <span class="side-button-text">View Source Code on Github</span>
                     </a>
                 </div>
@@ -149,7 +150,7 @@
         </div>
     </div>
     <div class="overlay-container-rb no-display" id="controlsHintsUi">
-        <div class="controls-explain">
+        <div class="controls-explain" id="controlsDesktopExplain">
             <div class="col align-img-right">
                 <img src="/mouse_materialicons3_google.svg" alt="Mouse Icon">
             </div>
@@ -180,6 +181,11 @@
             </div>
             <div class="control-explanation col">
                 to pause movement
+            </div>
+        </div>
+        <div class="controls-explain" id="controlsMobileExplain">
+            <div class="mobile-warn">
+                This app is not optimised for Mobile Devices. <br>Consider opening this on a Desktop.
             </div>
         </div>
     </div>
