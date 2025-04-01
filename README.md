@@ -73,4 +73,4 @@ npx vite build
 
 ## License
 
-None. OOCPlsDontSteal. Feel free to use this as a reference/inspiration though if you happen to stumble across it.
+None. OCPlsDontSteal. Feel free to use this as a reference/inspiration though if you happen to stumble across it.
