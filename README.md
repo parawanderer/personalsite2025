@@ -1,6 +1,6 @@
 # Personal Website 2025
 
-Source code for my 2025 personal website revamp. Available at [https://wander.dev](wander.dev)
+Source code for my 2025 personal website revamp. Available at [wander.dev](https://wander.dev)
 
 Some more pictures [here](./docs/). And a video [here](https://youtu.be/8iNIcQxMEDg)
 
