@@ -1,8 +1,8 @@
 import { AnimatedEntity } from "entity/animated-entity";
-import { Camera, Clock, DoubleSide, InstancedBufferAttribute, InstancedMesh, LoadingManager, Matrix4, Mesh, MeshBasicMaterial, Object3DEventMap, PlaneGeometry, Quaternion, Scene, Vector3 } from "three";
+import { Camera, Clock, DoubleSide, InstancedBufferAttribute, InstancedMesh, LoadingManager, Matrix4, Mesh, MeshBasicMaterial, Object3DEventMap, PlaneGeometry, Quaternion, Scene, Texture, Vector3 } from "three";
 import { randFloat } from "three/src/math/MathUtils.js";
 import { Queue } from "../utils/datastructures";
-import { getTexture } from "../utils/texture-utils";
+import { TextureLoader } from "../utils/texture-utils";
 import { fragment, fragmentPars, vertex, vertexPars } from "../shaders/particle-with-opacity.glsl";
 import { insertModifications } from "../shaders/util";
 
@@ -60,7 +60,7 @@ export class DustEmitter implements AnimatedEntity {
     private instancedMesh: InstancedMesh;
 
     constructor(
-        public texturePath: string,
+        public texture: Texture,
         private pos: Vector3,
         private spawnRadius: number,
         private scene: Scene,
@@ -76,7 +76,7 @@ export class DustEmitter implements AnimatedEntity {
             this.dustSize
         );
         this.material = new MeshBasicMaterial({
-            map: getTexture(texturePath),
+            map: texture,
             transparent: true,
             side: DoubleSide,
         });
@@ -226,7 +226,7 @@ export class RotatingDustEmitter extends DustEmitter {
     private circleVelocity: Vector3;
 
     constructor(
-        texturePath: string,
+        texture: Texture,
         private centerPos: Vector3,
         private rotationRadius: number,
         scene: Scene,
@@ -235,7 +235,7 @@ export class RotatingDustEmitter extends DustEmitter {
         dustSize: number
     ) {
         super(
-            texturePath,
+            texture,
             getPosForTime(0.0, rotationRadius).add(centerPos),
             0.001,
             scene,
@@ -298,7 +298,7 @@ export class DustFactory {
         initialSpawn: number
     ): DustEmitter {
         const emitter = new DustEmitter(
-            texturePath,
+            new TextureLoader(this.loadingMgr).getTexture(texturePath),
             pos,
             spawnRadius,
             this.scene,
@@ -321,7 +321,7 @@ export class DustFactory {
         dustSize: number
     ): DustEmitter {
         const emitter = new RotatingDustEmitter(
-            texturePath,
+            new TextureLoader(this.loadingMgr).getTexture(texturePath),
             pos,
             rotationRadius,
             this.scene,

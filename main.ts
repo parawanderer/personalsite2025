@@ -6,10 +6,8 @@ import {
     PerspectiveCamera,
     Scene,
     SRGBColorSpace,
-    Vector3,
     WebGLRenderer,
-    CineonToneMapping,
-    LoadingManager
+    CineonToneMapping
 } from 'three';
 import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
@@ -35,16 +33,8 @@ import {
     DUST_SIZE_RED,
     DUST_RADIUS,
     CUBE_LIGHT_COLOR,
-    SKY_TEXTURE,
     DUST_SPAWN_INITIALLY,
-    DUST_CAMERA_OFFSET_FRONT,
     DEBUG,
-    CAMERA_ABOUT_ME_X,
-    CAMERA_ABOUT_ME_Y,
-    CAMERA_ABOUT_ME_Z,
-    CAMERA_ABOUT_ME_DIRECTION_X,
-    CAMERA_ABOUT_ME_DIRECTION_Y,
-    CAMERA_ABOUT_ME_DIRECTION_Z,
     CAMERA_ABOUT_ME_POS,
     CAMERA_ABOUT_ME_DIR,
     CAMERA_CONTACT_POS,
@@ -65,6 +55,7 @@ import { DebugInfoDisplay } from './ui/debug-info';
 import { ForegroundManager } from './ui/foreground-manager';
 import { moveCameraTo } from './animate/camera';
 import { FilmPass } from './postprocessing/filmpass';
+import { LoadingManager } from './ui/loading-manager';
 
 (async () => { // <- stupid hack to allow using "await" in this body
 
@@ -80,16 +71,7 @@ scene.background = new Color(FOG_COLOR);
 scene.fog = new FogExp2(FOG_COLOR, FOG_INTENSITY);
 
 // asset loading crap
-const handleGraphicsLoading = (url: string, loaded: number, total: number): void => {
-    console.log(`Loading file: ${url} (${loaded}/${total})`);
-};
-
-const handleGraphicsLoaded = (): void => {
-    console.log("All assets loaded.");
-};
 const loadingMgr = new LoadingManager();
-loadingMgr.onProgress = handleGraphicsLoading;
-loadingMgr.onLoad = handleGraphicsLoaded;
 
 // camera
 const camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
@@ -114,14 +96,12 @@ controls.movementSpeed = CAMERA_SPEED;
 controls.lookSpeed = CAMERA_LOOK_SPEED;
 const interactionMgr = new InteractionManager(controls);
 
-
 const scheduler = new Scheduler();
 const factory = new GenericObjectFactory(loadingMgr, scene);
 const dustFactory = new DustFactory(loadingMgr, scene, camera);
 
-
 // background pane
-const pane = factory.makeGlassPane(0xffffff);
+const pane = factory.makeGlassPane();
 pane.position.set(CAMERA_INITIAL_X, CAMERA_INITIAL_Y, CAMERA_INITIAL_Z-1);
 
 // cube light
@@ -139,15 +119,11 @@ const skyDiffuseLight2 = factory.makeSkyDiffuseLight(0, 8, 0, 800);
 
 
 // skybox
-const sky = factory.makeSkybox(SKY_TEXTURE);
+const sky = factory.makeSkybox();
 
 // water
 const water = new WaterFactory(loadingMgr, scene).makeWater(WATER_TEXTURE, -ROW_LENGTH_Z/2);
 scheduler.add(water);
-
-// walls
-const walls = await new WallsFactory(loadingMgr, scene).makeWalls(CAMERA_INITIAL_Z);
-scheduler.add(walls);
 
 // particles
 const dust1 = dustFactory.makeDust(TEXTURE_PARTICLE_CYAN, DUST_CENTER.clone(), DUST_RADIUS, DUST_AMOUNT_CYAN, DUST_SIZE_CYAN, DUST_SPAWN_INITIALLY);
@@ -159,6 +135,10 @@ const rotatingParticles1 = dustFactory.makeRotatingDust(TEXTURE_PARTICLE_CYAN, R
 scheduler.add(rotatingParticles1);
 const rotatingParticles2 = dustFactory.makeRotatingDust(TEXTURE_PARTICLE_RED, ROTATING_DUST_CENTER.clone(), 0.5, DUST_AMOUNT_RED, DUST_SIZE_RED);
 scheduler.add(rotatingParticles2);
+
+// walls
+const walls = await new WallsFactory(loadingMgr, scene).makeWalls(CAMERA_INITIAL_Z);
+scheduler.add(walls);
 
 
 // debug-related UI elements

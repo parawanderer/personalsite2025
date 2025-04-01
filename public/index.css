@@ -1,66 +1,3 @@
-@charset "UTF-8";
-
-/**
-
-
-                                                ..',;:cccllllllccc:;,'..
-                                         .';coxOKXNWMMMMMMMMMMMMMMMMWNX0Oxoc;'.
-                                    .,cdOKNMMWNKOkdolc::;;;;;;;;::clodkOKNWMMNKkdc,.
-                                .,lxKWMWX0xoc,..                        ..,cox0XWMWKxl,.
-                             .:dKWMWKkl;.                                      .;lkKWMN0d;.
-                          .;xKWMXOo,.                                              .;oONMWKd;.
-                        'o0WMNkc'                                                      'ckNMW0o'
-                      ;xNMW0l'                                                            'o0WMXx,
-                    ;kNMNk;.                                                                .:kNMNk;
-                  ,kNMNx,                                                                      ,kNMNk,
-                .dNMNk,                                                                          ,kNMNd.
-               :KWW0:                                                                              :0WW0;
-             .dNMNd.       .......                                     ..',;:;,'.                   .dNMNd.
-            'OWMK:    .;lxO0KXXXK0Odl;.                            .;ok0XXXXXXXXKOdc'                 :KMWk'
-           ;0MWO'  .:xXN0xoc;;;;:cokKNKd;.                       ,dKNKxl;'.....,:okXNOl.               'OWM0,
-          ;KMWx. .c0N0o,.           .;dKNO:                    'xNNx;.             .cONKl.              .xWMK;
-         ;KMWx. 'kWKc.                 .oXNx.                 cXWk,.                 .cKWk'              .xWMK,
-        '0MWk. ,0MWOooooooooooooooooooood0MWk.              .cNMN0OOOOOOOOOOOOOOOOOOOOOXMM0'              .kWMO.
-       .xWM0' .kWXOkOkkkOXMMMMMMXOkOkkkkOkONWd.            ,xKWOoooooooxXMMMMMXxoooooooodKWd.              '0MWx.
-       lNMX:  cNX:     .cXMMMMMMK:.        lWX;            oWWK,      'OWMMMMMWO'        lWK,               :XMNc
-      '0MWd.  dMO'     ;XMMMMMMMMK,        ;XWc           .xMMk.     .dMMMMMMMMMd        :NN:               .dWM0'
-      oWMK,   dM0'     ;XMMMMMMMMK,        ;XWc           .xMMO.      oWMMMMMMMWo        :NN:                ,KMWl
-     '0MWd    cNNc     .lXMMMMMMKc.        oWX;            cXNXl......,kWMMMMMWk,.......'kMO'                 dWMO.
-     :NMX;    .kMXOOOOOOOXMMMMMMXOOOOOOOOOONWd.            .:kWNKKXXXXXXWMMMMMWXKXXXXXXKXWNc                  :XMN:
-     dMMO.     ,0MWOolllllllllllllllllllo0WWk.               .OWWkc:::::::::::::::::::lKMNo.                  .OMWo
-    .kMMx.      'kWKl.                 .oXNd.                 .dNXd'                .;OWK:                    .xMMx.
-    .OMMo        .c0NKo,.           .;dXNO;                     ;kNNkc'.         .;o0NKo.                      oMMk.
-    '0MWl          .:xXNKxoc:;,;:cokXNKd;                         'lOXN0kdollloxOXNKx:.                        lWM0'
-    '0MWo             .;ldO0KKKKK0kdc,.                              .;coxkkOkkdo:,.                           oMMO.
-    .kMMd                  ......                                                                              dMMk.
-    .xMMk.                          ........................................................                  .kMMd
-     lWMK,      cOOOOOOOOOOOOOOOOOO000000000000000000000KKXKKKKKKKKKKKKKKKKKKKXXXXXXXXXXKKXd.                 ,KMWc
-     ,KMWl      ,lllllcccccccccccccccccccccc::::::::::::::::::::;;;;;;,,;;;;;,;;,;;,;;;,'''.                  lWMK,
-     .xMMk.                                                                                                  .kMMx.
-      :NMNc                                                                                                  cNMX:
-      .xWMO'                                                                                                '0MWx.
-       ,KMWd.                                                                                              .dWM0'
-        cNMNl                                                                                              lNMX:
-        .oNMX:                                                                                            :XMNo
-         .dWMX:                                                                                          :XMWd.
-          .dNMXc                                                                                        cXMNd.
-           .oNMNo.                                                                                    .oNMXl.
-             :KMWk'                                                                                  'kWMK:
-              'kWMXl.                                                                              .lXMWk'
-               .lXMWO;                                                                            ;OWMKc.
-                 'xNMNk,                                                                        ,kNMNx'
-                   ,kNMNk;.                                                                  .;kNMNx,
-                     ;kNMNOc.                                                              .cONMNx,
-                       ,dXWWXx;.                                                        .;xXWWKd,
-                         .ckNMWKd:.                                                  .:dKWMNkc.
-                            'lONMWXkl;.                                          .;lkXWMXkl'
-                               'cxKWMWXOdc,..                              ..,cdOXWMWKxc.
-                                  .,cx0XWMWX0kdl:;'....          ....';:ldk0XWMWX0xc,.
-                                       .;ldk0XWMMMWNXK0OOOkkkkOOO0KXNWMMMWX0kdc;.
-                                            ..,;cldxkOO00KKXXK000OOkxdlc:,..
-                                                       ..........
-*/
-
 * {
     font-family: 'Montserrat', sans-serif;
 }
@@ -71,6 +8,93 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+.loading-overlay {
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10000;
+    /**
+    Few levels of "loading" background here.
+
+    1. most basic: just fill in sky color
+    2. Otherwise fill with a gradient that kind of looks like the loaded scene
+    3. Otherwise load an image that is a blurred image of the main scene (without text)
+    4. Otherwise (on load) show the actual scene (i.e. unblur)
+
+    */
+    background-color: #9ebebf;
+    background: url(/loading_bg.png), linear-gradient(90deg, #8b6853, #9ebebf, #8b6853);
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.loading-overlay.hiding {
+    opacity: 0;
+}
+
+.loading-overlay.hidden {
+    display: none;
+}
+
+.loading-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-text {
+    color: white;
+    font-size: 10pt;
+    margin-top: 2em;
+    margin-left: 0.5em;
+}
+
+
+/**
+I got this from https://cssloaders.github.io/
+https://github.com/vineethtrv/css-loader
+*/
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 2pt solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1.5pt solid transparent;
+    border-bottom-color: #da6b2b;
+}
+
+@keyframes rotation {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
 
 .emphasis {
     font-weight: 600;

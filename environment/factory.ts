@@ -5,7 +5,6 @@ import {
     SpotLight,
     PointLight,
     SphereGeometry,
-    TextureLoader,
     MeshBasicMaterial,
     Mesh,
     Object3DEventMap,
@@ -46,7 +45,7 @@ export class GenericObjectFactory {
         return cube;
     }
 
-    public makeGlassPane(color: number) {
+    public makeGlassPane() {
         const geometry = new BoxGeometry(1, 1, 0.01);
         const material = new MeshPhysicalMaterial({
             color: 0xffffff,
@@ -108,13 +107,10 @@ export class GenericObjectFactory {
         return light;
     }
 
-    public makeSkybox(texturePath: string): Mesh<SphereGeometry, MeshBasicMaterial, Object3DEventMap> {
+    public makeSkybox(): Mesh<SphereGeometry, MeshBasicMaterial, Object3DEventMap> {
         const geometry = new SphereGeometry(120, 60, 40);
         geometry.scale(-1, 1, 1); // invert the geometry on the x-axis so that all of the faces point inward
-        const texture = new TextureLoader().load(texturePath);
-        //texture.colorSpace = SRGBColorSpace;
         const material = new MeshBasicMaterial({
-            //map: texture,
             fog: false,
             color: new Color(BACKGROUND_COLOR)
         });

@@ -62,7 +62,7 @@ export class WaterFactory {
         const water = new ThreeWater(geometry, {
             textureWidth: 512,
             textureHeight: 512,
-            waterNormals: new TextureLoader().load(normalsPath, (texture) => {
+            waterNormals: new TextureLoader(this.loadingMgr).load(normalsPath, (texture) => {
                 texture.wrapS = texture.wrapT = RepeatWrapping;
             }),
             sunDirection: new Vector3(0, 10, -10),
